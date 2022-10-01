@@ -1,10 +1,14 @@
 /*
-    Implementa los metodos definidos en la cabecera (.hpp)
+Archivo que contiene la implementacion completa de listas
+(definicion de funciones e implementacion)
+Utilizar solo para pruebas.
 */
 #include <iostream>
-#include "linkedlist.hpp"
 using namespace std;
-
+struct Node{
+    int value;
+    Node* next;
+};
 
 //Para poder crear un nodo
 Node* createNode(int value){
@@ -64,6 +68,7 @@ void addBefore(Node* &head, int reference, int value){
     }
 }
 
+//Elimina el nodo que tenga el valor dado como dato
 void remove(Node* &head, int element){
     /*
         Necesitamos un puntero que apunte al nodo de referencia y uno
