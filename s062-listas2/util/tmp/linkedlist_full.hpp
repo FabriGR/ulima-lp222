@@ -29,7 +29,7 @@ void addFirst(Node* &head, int value){
 }
 
 //Agrega un elemento al final
-void addLast(Node* head, int value){
+void addLast(Node* &head, int value){
     Node* newNode = createNode(value);
     Node* ptr = head;
 
@@ -38,8 +38,9 @@ void addLast(Node* head, int value){
             ptr = ptr->next;
         }
         ptr->next = newNode;
-    }
-    head = newNode;
+    }else{
+        addFirst(head, value);
+    } 
 }
 
 //Agregar un elemento como predecesor de otro enviado como referencia
@@ -89,6 +90,8 @@ void remove(Node* &head, int element){
             //En caso contrario actualizamos referencias
             prev->next = ptr->next;
         }
+        //Liberamos memoria
+        delete ptr;
     }
 }
 

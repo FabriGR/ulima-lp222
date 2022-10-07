@@ -5,7 +5,6 @@
 #include "linkedlist.hpp"
 using namespace std;
 
-
 //Para poder crear un nodo
 Node* createNode(int value){
     Node* head = new Node();
@@ -28,7 +27,6 @@ void addFirst(Node* &head, int value){
 void addLast(Node* head, int value){
     Node* newNode = createNode(value);
     Node* ptr = head;
-
     if(head != nullptr){
         while(ptr->next != nullptr){
             ptr = ptr->next;
@@ -84,6 +82,8 @@ void remove(Node* &head, int element){
             //En caso contrario actualizamos referencias
             prev->next = ptr->next;
         }
+        //Liberamos memoria
+        delete ptr;
     }
 }
 
