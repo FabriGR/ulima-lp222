@@ -15,11 +15,13 @@ void printFiltered(Node* head, int lastDigit){
 int main(){
     //Lista: 20 -> 34 -> 40 -> 54
     Node* head = nullptr;
+    
     addLast(head, 20);
     addLast(head, 34);
     addLast(head, 40);
     addLast(head, 54);
-    int lastDigit = 4;
+    
+     int lastDigit = 4;
     cout << "Elementos que terminan en " << lastDigit << ": ";
     printFiltered(head, lastDigit);
     return 0;
